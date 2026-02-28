@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    int findTheWinner(int n, int k) {
+        vector<int> friends;
+
+        for (int i = 1; i <= n; i++) {
+            friends.push_back(i);
+        }   
+
+        int index = 0;
+
+        while (friends.size() > 1) {
+            index = (index + k - 1) % friends.size();
+            friends.erase(friends.begin() + index);
+        }
+
+        return friends[0];
+    }
+};
+int main () {
+    int n, k;
+    cin >> n >> k;
+
+    Solution sol;
+    cout << sol.findTheWinner(n ,k) << endl;
+
+    return 0;
+}
