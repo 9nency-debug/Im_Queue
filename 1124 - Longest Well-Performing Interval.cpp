@@ -16,7 +16,7 @@ int longestWPI(vector<int>& hours) {
         else
             prefixSum -= 1;
 
-        // Case 1: entire subarray from 0 to i is valid
+        // Case 1: entire subarray from saf0 to i is valid
         if (prefixSum > 0) {
             maxLength = i + 1;
         }
